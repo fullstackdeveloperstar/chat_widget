@@ -27,6 +27,7 @@
 
 .chat-content{
 	min-width: 350px;
+	display: none;
 }
 
 .chat-content .chat-content-header{
