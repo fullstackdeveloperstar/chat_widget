@@ -7,6 +7,8 @@
 .chat-container{
 	box-shadow: 1px 7px 29px -1px #a29d9d;
 	border-radius: 10px;
+	font-family: Brandon,sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .close-container{
@@ -28,6 +30,7 @@
 .chat-content{
 	min-width: 350px;
 	display: none;
+	width: 350px;
 }
 
 .chat-content .chat-content-header{
@@ -117,7 +120,8 @@
 }
 
 .message-content{
-	padding: 15px;
+	padding: 0 15px;
+	word-break: break-all;
 }
 
 .message-me{
@@ -131,7 +135,9 @@
     background: #0a5bff;
     color: white;
     border-radius: 20px;
-	
+	padding: 15px;
+	margin: 5px 0;
+	word-break: break-all;
 }
 
 .textarea-message{
@@ -166,7 +172,7 @@
 	z-index: -1;
 	color: #888;
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     /*transition: 2s;*/
 }
 
@@ -203,7 +209,7 @@
 
 .power-buttons span{
 	color: #888;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 
 .power-buttons i{
@@ -232,4 +238,129 @@
 
 .file-send-input{
 	display: none;
+}
+
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Overpass);
+@font-face {
+	font-family: Brandon;
+	font-weight: 100;
+	src: url(./3218ac3d57047fe3632e28eb00f7f82a.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 300;
+	src: url(./ef2178680ffbd841cc9ccca132734cea.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-style: normal;
+	src: url(./1c7b5698687a6a103981a7a138de218e.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 500;
+	src: url(./8fcf55f0463126efa22257deb6f6a9ff.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 600;
+	src: url(./4b46eb2ce75b22547575a0dc2144494e.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 700;
+	src: url(./30c94aae563dcd7274a3ffa8b2922dcf.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 100;
+	font-style: italic;
+	src: url(./a9657f94314103a5f73cb2f20f79d6f4.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 300;
+	font-style: italic;
+	src: url(./ca2959289ab9b29c8deae0c2875c5c87.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-style: italic;
+	src: url(./cfff98a4f67f2ddc7a342001a4411cbf.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 500;
+	font-style: italic;
+	src: url(./a471cda1b9f147879536ac0e5a339816.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 600;
+	font-style: italic;
+	src: url(./f56e872cf4216c7b05230ed1192f5935.woff)
+}
+
+@font-face {
+	font-family: Brandon;
+	font-weight: 700;
+	font-style: italic;
+	src: url(./04bef53a7fb150514e895ea1a496cec1.woff)
 }

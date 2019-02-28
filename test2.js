@@ -96,11 +96,26 @@
 						<i>
 							<svg viewBox="0 0 277 276" xmlns="http://www.w3.org/2000/svg"><g transform="translate(.22 .462)" fill="none" fill-rule="evenodd"><rect class="color" x="1.78" y="1.538" width="273" height="272.443" rx="10"></rect><path d="M185.99 275.256h80.127a9.988 9.988 0 0 0 9.991-9.991V10.246c0-5.517-4.473-9.99-9.99-9.99H10.536a9.988 9.988 0 0 0-9.991 9.99v255.019c0 5.517 4.473 9.99 9.99 9.99H86.46V260.75c4.152-20.961 21.273-37.27 42.671-40.255v-10.092H57.319c-4.68 0-8.453-3.773-8.453-8.427v-97.758c0-4.647 3.78-8.428 8.445-8.428h64.862V82.035h13.745V58.33c-5.339-1.888-9.164-6.983-9.164-12.971 0-7.596 6.154-13.754 13.746-13.754 7.59 0 13.745 6.158 13.745 13.754 0 5.988-3.825 11.083-9.164 12.97v23.706h13.745V95.79h60.264c4.669 0 8.462 3.773 8.462 8.428v97.758c0 4.647-3.785 8.427-8.454 8.427H144.18v10.223c21.024 3.31 37.756 19.512 41.81 40.24v14.39z" fill="#FFF" opacity=".85"></path><rect fill="#FFF" x="72.994" y="123.785" width="131.425" height="41.376" rx="10"></rect><ellipse class="color" opacity=".5" cx="101.112" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse class="color" opacity=".5" cx="172.234" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse fill="#000" opacity=".6" cx="101.112" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse fill="#000" opacity=".6" cx="172.234" cy="145.301" rx="14.886" ry="14.895"></ellipse></g></svg>
 						</i>
-						<div class="message-content">Hey there! <br><br> Thinking of joining the conversational marketing movement? </div>
+						<div class="message-content">
+							DriftBot<br><br>
+							Hey there! You're back 👋 What's up?  </div>
 					</div>
 
 					<div class="message-me">
 						<div class="message-content">hi</div>
+					</div>
+
+					<div class="message-bot">
+						<i>
+							<svg viewBox="0 0 277 276" xmlns="http://www.w3.org/2000/svg"><g transform="translate(.22 .462)" fill="none" fill-rule="evenodd"><rect class="color" x="1.78" y="1.538" width="273" height="272.443" rx="10"></rect><path d="M185.99 275.256h80.127a9.988 9.988 0 0 0 9.991-9.991V10.246c0-5.517-4.473-9.99-9.99-9.99H10.536a9.988 9.988 0 0 0-9.991 9.99v255.019c0 5.517 4.473 9.99 9.99 9.99H86.46V260.75c4.152-20.961 21.273-37.27 42.671-40.255v-10.092H57.319c-4.68 0-8.453-3.773-8.453-8.427v-97.758c0-4.647 3.78-8.428 8.445-8.428h64.862V82.035h13.745V58.33c-5.339-1.888-9.164-6.983-9.164-12.971 0-7.596 6.154-13.754 13.746-13.754 7.59 0 13.745 6.158 13.745 13.754 0 5.988-3.825 11.083-9.164 12.97v23.706h13.745V95.79h60.264c4.669 0 8.462 3.773 8.462 8.428v97.758c0 4.647-3.785 8.427-8.454 8.427H144.18v10.223c21.024 3.31 37.756 19.512 41.81 40.24v14.39z" fill="#FFF" opacity=".85"></path><rect fill="#FFF" x="72.994" y="123.785" width="131.425" height="41.376" rx="10"></rect><ellipse class="color" opacity=".5" cx="101.112" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse class="color" opacity=".5" cx="172.234" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse fill="#000" opacity=".6" cx="101.112" cy="145.301" rx="14.886" ry="14.895"></ellipse><ellipse fill="#000" opacity=".6" cx="172.234" cy="145.301" rx="14.886" ry="14.895"></ellipse></g></svg>
+						</i>
+						<div class="message-content">
+							<div class="spinner">
+							  <div class="bounce1"></div>
+							  <div class="bounce2"></div>
+							  <div class="bounce3"></div>
+							</div>
+						</div>
 					</div>
 
 				</div>
@@ -171,7 +186,7 @@
 					
 				});
 
-				$( ".textarea-message" ).keyup(function() {
+				$( ".textarea-message" ).keyup(function(e) {
 					if($(this).val() != "") {
 						$(".power-buttons").css("display", "none");
 						$(".send-button").css("display", "flex");
@@ -179,6 +194,13 @@
 						$(".power-buttons").css("display", "flex");
 						$(".send-button").css("display", "none");
 					}
+
+					var code = (e.keyCode ? e.keyCode : e.which);
+			        //alert(code);
+			        if (code == 13) {
+			            addMessage($(this).val());
+			            $(this).val("");
+			        }
 				});
 
 				$(".send-attache-btn").click(function(){
@@ -203,6 +225,15 @@
 						$(".chat-content").hide();
 						$(".close-container").show();
 					}
+				}
+
+				function addMessage(msg) {
+					var message = `
+						<div class="message-me">
+							<div class="message-content">` + msg + `</div>
+						</div>
+					`;
+					$(".chat-content-message-container").append(message);
 				}
 
 				toggleDlg();
