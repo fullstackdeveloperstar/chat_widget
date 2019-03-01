@@ -122,6 +122,9 @@
 .message-content{
 	padding: 0 15px;
 	word-break: break-all;
+	border-radius: 15px;
+    margin-left: 5px;
+    background: #ddd;
 }
 
 .message-me{
@@ -241,7 +244,7 @@
 }
 
 .spinner {
-  margin: 100px auto 0;
+  /*margin: 100px auto 0;*/
   width: 70px;
   text-align: center;
 }
